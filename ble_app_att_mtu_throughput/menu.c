@@ -128,7 +128,11 @@ void get_test_params(test_params_t *params)
 
 //BLE VERSION
 
+#if defined(S140)
 #define BLE_VERSION_OPTIONS_SIZE 4
+#elif defined(S132)
+#define BLE_VERSION_OPTIONS_SIZE 3
+#endif
 
 #if defined(S132)
 char *ble_version_options[BLE_VERSION_OPTIONS_SIZE] = {"BLE 5 High Speed", "BLE 4.2", "BLE 4.1"};
